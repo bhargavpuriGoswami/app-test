@@ -27,4 +27,10 @@ describe('API Endpoints', ()=> {
         .post('/post')
         expect(res.statusCode).toEqual(400);
     });
+
+    it('It should return 400', async()=>{
+        const res=await request(app)
+        .post('/post')
+        expect(res.body).toHaveProperty('error');
+    });
   });
